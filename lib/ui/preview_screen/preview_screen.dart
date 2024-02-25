@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shortest_route/const/text_constants.dart';
-import 'package:shortest_route/domain/result/result.dart';
+import 'package:shortest_route/domain/entities/result/result.dart';
 import 'package:shortest_route/ui/core/widgets/scroll_layout.dart';
 import 'package:shortest_route/ui/preview_screen/widgets/grid_widget.dart';
 

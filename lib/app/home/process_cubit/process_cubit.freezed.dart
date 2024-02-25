@@ -146,7 +146,7 @@ class __$$ProcessStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProcessStateImpl implements _ProcessState {
+class _$ProcessStateImpl with DiagnosticableTreeMixin implements _ProcessState {
   const _$ProcessStateImpl(
       {required this.progressValue,
       required this.percent,
@@ -166,8 +166,20 @@ class _$ProcessStateImpl implements _ProcessState {
   final Option<Either<Failure, List<Result>>> failureOrSuccesses;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProcessState(progressValue: $progressValue, percent: $percent, isLoading: $isLoading, isDone: $isDone, failureOrSuccesses: $failureOrSuccesses)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProcessState'))
+      ..add(DiagnosticsProperty('progressValue', progressValue))
+      ..add(DiagnosticsProperty('percent', percent))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isDone', isDone))
+      ..add(DiagnosticsProperty('failureOrSuccesses', failureOrSuccesses));
   }
 
   @override

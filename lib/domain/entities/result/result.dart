@@ -1,17 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shortest_route/data/result_dto/result_dto.dart';
-import 'package:shortest_route/domain/cell/cell.dart';
-import 'package:shortest_route/domain/search_task/search_task.dart';
+import 'package:shortest_route/data/dto/result_dto/result_dto.dart';
+import 'package:shortest_route/domain/entities/cell/cell.dart';
+import 'package:shortest_route/domain/entities/search_task/search_task.dart';
 
 part 'result.freezed.dart';
-
-// @freezed
-// class FacadeResult with _$FacadeResult {
-//   const factory FacadeResult({
-//     required FacadeSearchTask task,
-//     required Result result,
-//   }) = _FacadeResult;
-// }
 
 @freezed
 class Result with _$Result {

@@ -1,10 +1,10 @@
-import 'package:shortest_route/app/iterations_receiver.dart';
-import 'package:shortest_route/domain/cell/algorithm_cell.dart';
-import 'package:shortest_route/domain/cell/cell.dart';
-import 'package:shortest_route/domain/result/result.dart';
-import 'package:shortest_route/domain/search_task/search_task.dart';
+import 'dart:isolate';
+
+import 'package:shortest_route/domain/entities/cell/algorithm_cell.dart';
+import 'package:shortest_route/domain/entities/cell/cell.dart';
+import 'package:shortest_route/domain/entities/result/result.dart';
+import 'package:shortest_route/domain/entities/search_task/search_task.dart';
 import 'package:shortest_route/domain/utils/utils.dart';
-import 'package:shortest_route/injectable.dart';
 
 abstract class _Constants {
   static const List<Cell> childrenOffset = <Cell>[
@@ -19,9 +19,9 @@ abstract class _Constants {
   ];
 }
 
-Result searchShortestRoute(FacadeSearchTask facade) {
-  final IterationsReceiver receiver = getIt<IterationsReceiver>();
-
+/// A*
+Future<void> searchShortestRoute(
+    FacadeSearchTask facade, SendPort sendPort) async {
   final List<AlgorithmCell> openList = <AlgorithmCell>[];
   final List<AlgorithmCell> closeList = <AlgorithmCell>[
     if (facade.task.blockedCells.isNotEmpty)
@@ -57,10 +57,16 @@ Result searchShortestRoute(FacadeSearchTask facade) {
         path.add(pathCurrent);
         pathCurrent = pathCurrent.parent;
       }
-      return Result(
-        facadeTask: facade,
-        path: path.reversed.map((e) => e.cell).toList(),
+      await Future.delayed(const Duration(milliseconds: 250));
+      sendPort.send(
+        Iteration(
+          result: Result(
+            facadeTask: facade,
+            path: path.reversed.map((e) => e.cell).toList(),
+          ),
+        ),
       );
+      return;
     }
 
     final List<AlgorithmCell> children = <AlgorithmCell>[];
@@ -93,12 +99,23 @@ Result searchShortestRoute(FacadeSearchTask facade) {
       }
       openList.add(childC);
     }
-
-    receiver.addIteration(Iteration());
+    await Future.delayed(const Duration(milliseconds: 250));
+    sendPort.send(Iteration());
   }
 
-  return Result(
-    facadeTask: facade,
-    path: [],
+  await Future.delayed(const Duration(milliseconds: 250));
+  sendPort.send(
+    Iteration(
+      result: Result(
+        facadeTask: facade,
+        path: [],
+      ),
+    ),
   );
+}
+
+class Iteration {
+  Iteration({this.result});
+
+  final Result? result;
 }

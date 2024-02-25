@@ -19,15 +19,3 @@ Map<String, dynamic> _$$SearchTaskDtoImplToJson(_$SearchTaskDtoImpl instance) =>
       'start': instance.start.toJson(),
       'end': instance.end.toJson(),
     };
-
-_$CellDtoImpl _$$CellDtoImplFromJson(Map<String, dynamic> json) =>
-    _$CellDtoImpl(
-      x: json['x'] as int,
-      y: json['y'] as int,
-    );
-
-Map<String, dynamic> _$$CellDtoImplToJson(_$CellDtoImpl instance) =>
-    <String, dynamic>{
-      'x': instance.x,
-      'y': instance.y,
-    };

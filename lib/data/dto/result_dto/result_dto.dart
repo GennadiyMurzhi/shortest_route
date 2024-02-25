@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shortest_route/data/search_task_dto/search_task_dto.dart';
+import 'package:shortest_route/data/dto/cell_dto/cell_dto.dart';
 
 part 'result_dto.freezed.dart';
 

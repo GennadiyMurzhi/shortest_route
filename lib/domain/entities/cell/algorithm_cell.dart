@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shortest_route/domain/cell/cell.dart';
+import 'package:shortest_route/domain/entities/cell/cell.dart';
 
 part 'algorithm_cell.freezed.dart';
 

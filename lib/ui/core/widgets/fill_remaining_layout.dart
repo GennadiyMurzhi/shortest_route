@@ -21,8 +21,9 @@ class FillRemainingLayout extends StatelessWidget {
           style: Theme.of(context).textTheme.titleLarge,
         ),
         leading: needBackButton
-            ? const BackButton(
+            ? BackButton(
                 color: Colors.white,
+                onPressed: () => Navigator.pop(context),
               )
             : null,
         backgroundColor: Colors.blue,

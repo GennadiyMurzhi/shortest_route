@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shortest_route/domain/cell/cell.dart';
-import 'package:shortest_route/domain/result/result.dart';
+import 'package:shortest_route/domain/entities/cell/cell.dart';
+import 'package:shortest_route/domain/entities/result/result.dart';
 
 abstract class _Constants {
   static const startCell = Color(0xFF64FFDA); // Початкова комірка

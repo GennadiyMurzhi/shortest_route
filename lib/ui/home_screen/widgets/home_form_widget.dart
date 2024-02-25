@@ -24,7 +24,8 @@ class HomeFormWidget extends StatelessWidget {
         ),
       child: BlocConsumer<HomeFormCubit, HomeFormState>(
         listener: (context, state) {
-          state.failureOrSuccesses.map(
+          state.failureOrSuccesses.fold(
+            () => null,
             (a) => a.fold(
               (l) => ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -39,7 +40,8 @@ class HomeFormWidget extends StatelessWidget {
                   )),
                 ),
               ),
-              (r) => Navigator.of(context).push(
+              (r) => Navigator.push(
+                context,
                 MaterialPageRoute(
                   builder: (context) => ProcessScreen(tasks: r),
                 ),

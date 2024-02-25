@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:shortest_route/data/search_task_dto/search_task_dto.dart';
+import 'package:shortest_route/data/dto/search_task_dto/search_task_dto.dart';
+import 'package:shortest_route/domain/entities/result/result.dart';
+import 'package:shortest_route/domain/entities/search_task/search_task.dart';
 import 'package:shortest_route/domain/failures/failures.dart';
 import 'package:shortest_route/domain/repository/i_counting_repository.dart';
 import 'package:http/http.dart' as http;
-import 'package:shortest_route/domain/result/result.dart';
-import 'package:shortest_route/domain/search_task/search_task.dart';
 import 'package:shortest_route/domain/value_objects/url_value_object.dart';
 
 class _Constants {

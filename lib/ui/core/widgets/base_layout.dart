@@ -18,8 +18,9 @@ class BaseLayout extends StatelessWidget {
           appBarTitle,
           style: Theme.of(context).textTheme.titleLarge,
         ),
-        leading: const BackButton(
+        leading: BackButton(
           color: Colors.white,
+          onPressed: () => Navigator.pop(context),
         ),
         backgroundColor: Colors.blue,
       ),

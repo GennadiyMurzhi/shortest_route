@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shortest_route/domain/entities/search_task/search_task.dart';
 import 'package:shortest_route/domain/failures/failures.dart';
 import 'package:shortest_route/domain/repository/i_counting_repository.dart';
-import 'package:shortest_route/domain/search_task/search_task.dart';
 import 'package:shortest_route/domain/value_objects/url_value_object.dart';
+import 'package:shortest_route/injectable.dart';
 
 part 'home_form_state.dart';
 

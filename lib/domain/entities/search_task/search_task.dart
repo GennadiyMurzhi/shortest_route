@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shortest_route/data/search_task_dto/search_task_dto.dart';
-import 'package:shortest_route/domain/cell/cell.dart';
-import 'package:shortest_route/domain/grid/grid.dart';
+import 'package:shortest_route/data/dto/search_task_dto/search_task_dto.dart';
+import 'package:shortest_route/domain/entities/cell/cell.dart';
+import 'package:shortest_route/domain/entities/grid/grid.dart';
 
 part 'search_task.freezed.dart';
 

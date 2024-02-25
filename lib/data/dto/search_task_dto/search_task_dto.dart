@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shortest_route/data/dto/cell_dto/cell_dto.dart';
 
 part 'search_task_dto.freezed.dart';
 
@@ -14,15 +15,4 @@ class SearchTaskDto with _$SearchTaskDto {
 
   factory SearchTaskDto.fromJson(Map<String, dynamic> json) =>
       _$SearchTaskDtoFromJson(json);
-}
-
-@freezed
-class CellDto with _$CellDto {
-  const factory CellDto({
-    required int x,
-    required int y,
-  }) = _CellDto;
-
-  factory CellDto.fromJson(Map<String, dynamic> json) =>
-      _$CellDtoFromJson(json);
 }
