@@ -45,6 +45,10 @@ class HomeFormWidget extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => ProcessScreen(tasks: r),
                 ),
+              ).whenComplete(
+                () {
+                  BlocProvider.of<HomeFormCubit>(context).resetOption();
+                },
               ),
             ),
           );

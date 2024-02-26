@@ -5,7 +5,6 @@ import 'package:shortest_route/domain/entities/search_task/search_task.dart';
 import 'package:shortest_route/domain/failures/failures.dart';
 import 'package:shortest_route/domain/repository/i_counting_repository.dart';
 import 'package:shortest_route/domain/value_objects/url_value_object.dart';
-import 'package:shortest_route/injectable.dart';
 
 part 'home_form_state.dart';
 
@@ -49,6 +48,14 @@ class HomeFormCubit extends Cubit<HomeFormState> {
       state.copyWith(
         isLoading: false,
         failureOrSuccesses: optionOf(response),
+      ),
+    );
+  }
+
+  void resetOption() {
+    emit(
+      state.copyWith(
+        failureOrSuccesses: none(),
       ),
     );
   }

@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeFormState {
   UrlValueObject get url => throw _privateConstructorUsedError;
-  bool get needPush => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   Option<Either<Failure, List<SearchTask>>> get failureOrSuccesses =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $HomeFormStateCopyWith<$Res> {
   @useResult
   $Res call(
       {UrlValueObject url,
-      bool needPush,
       bool isLoading,
       Option<Either<Failure, List<SearchTask>>> failureOrSuccesses});
 }
@@ -54,7 +52,6 @@ class _$HomeFormStateCopyWithImpl<$Res, $Val extends HomeFormState>
   @override
   $Res call({
     Object? url = null,
-    Object? needPush = null,
     Object? isLoading = null,
     Object? failureOrSuccesses = null,
   }) {
@@ -63,10 +60,6 @@ class _$HomeFormStateCopyWithImpl<$Res, $Val extends HomeFormState>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as UrlValueObject,
-      needPush: null == needPush
-          ? _value.needPush
-          : needPush // ignore: cast_nullable_to_non_nullable
-              as bool,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -89,7 +82,6 @@ abstract class _$$HomeFormStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {UrlValueObject url,
-      bool needPush,
       bool isLoading,
       Option<Either<Failure, List<SearchTask>>> failureOrSuccesses});
 }
@@ -106,7 +98,6 @@ class __$$HomeFormStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? url = null,
-    Object? needPush = null,
     Object? isLoading = null,
     Object? failureOrSuccesses = null,
   }) {
@@ -115,10 +106,6 @@ class __$$HomeFormStateImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as UrlValueObject,
-      needPush: null == needPush
-          ? _value.needPush
-          : needPush // ignore: cast_nullable_to_non_nullable
-              as bool,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -136,14 +123,11 @@ class __$$HomeFormStateImplCopyWithImpl<$Res>
 class _$HomeFormStateImpl implements _HomeFormState {
   const _$HomeFormStateImpl(
       {required this.url,
-      required this.needPush,
       required this.isLoading,
       required this.failureOrSuccesses});
 
   @override
   final UrlValueObject url;
-  @override
-  final bool needPush;
   @override
   final bool isLoading;
   @override
@@ -151,7 +135,7 @@ class _$HomeFormStateImpl implements _HomeFormState {
 
   @override
   String toString() {
-    return 'HomeFormState(url: $url, needPush: $needPush, isLoading: $isLoading, failureOrSuccesses: $failureOrSuccesses)';
+    return 'HomeFormState(url: $url, isLoading: $isLoading, failureOrSuccesses: $failureOrSuccesses)';
   }
 
   @override
@@ -160,8 +144,6 @@ class _$HomeFormStateImpl implements _HomeFormState {
         (other.runtimeType == runtimeType &&
             other is _$HomeFormStateImpl &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.needPush, needPush) ||
-                other.needPush == needPush) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.failureOrSuccesses, failureOrSuccesses) ||
@@ -170,7 +152,7 @@ class _$HomeFormStateImpl implements _HomeFormState {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, url, needPush, isLoading, failureOrSuccesses);
+      Object.hash(runtimeType, url, isLoading, failureOrSuccesses);
 
   @JsonKey(ignore: true)
   @override
@@ -182,15 +164,12 @@ class _$HomeFormStateImpl implements _HomeFormState {
 abstract class _HomeFormState implements HomeFormState {
   const factory _HomeFormState(
       {required final UrlValueObject url,
-      required final bool needPush,
       required final bool isLoading,
       required final Option<Either<Failure, List<SearchTask>>>
           failureOrSuccesses}) = _$HomeFormStateImpl;
 
   @override
   UrlValueObject get url;
-  @override
-  bool get needPush;
   @override
   bool get isLoading;
   @override
